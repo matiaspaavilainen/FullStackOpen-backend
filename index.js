@@ -4,6 +4,7 @@ const cors = require('cors')
 const app = express()
 
 app.use(express.json())
+app.use(express.static('build'))
 app.use(morgan(':method :url :status :res[content-length] - :response-time ms :contact'))
 app.use(cors())
 
@@ -88,7 +89,6 @@ app.post('/api/persons', (req, res) => {
     }
 
     persons.push(person)
-    console.log(persons)
     res.json(person)
 })
 
