@@ -1,4 +1,4 @@
-POST https://fso-phonebook-00g9.onrender.com/api/persons/
+POST http://localhost:3001/api/persons
 Content-Type: application/json
 
 {
