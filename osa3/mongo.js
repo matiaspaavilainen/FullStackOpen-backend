@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-if (process.argv.length<3) {
+if (process.argv.length < 3) {
   console.log('give password as argument')
   process.exit(1)
 }
@@ -8,7 +8,7 @@ if (process.argv.length<3) {
 const password = process.argv[2]
 
 const url =
-    `mongodb+srv://fso:${password}@cluster0.hhlsgfc.mongodb.net/phonebook?retryWrites=true&w=majority`
+  `mongodb+srv://fso:${password}@cluster0.hhlsgfc.mongodb.net/phonebook?retryWrites=true&w=majority`
 
 mongoose.set('strictQuery', false)
 mongoose.connect(url)
@@ -28,6 +28,7 @@ if (process.argv.length < 4) {
     })
     mongoose.connection.close()
   })
+
 } else {
   const person = new Person({
     name: process.argv[3],
